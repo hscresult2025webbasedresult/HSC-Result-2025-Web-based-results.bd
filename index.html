@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Board Results - Bangladesh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2e8b57, #32cd32, #ff6b6b);
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo-inner {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #ff0000, #cc0000);
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .logo-star {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffff00;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .header-text h1 {
+            font-size: 16px;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .header-text h2 {
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .header-text .subtitle {
+            font-size: 11px;
+            margin-top: 2px;
+            opacity: 0.9;
+        }
+
+        .form-container {
+            padding: 30px;
+            background-color: #fafafa;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+
+        .form-row label {
+            min-width: 100px;
+            font-weight: normal;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-row select,
+        .form-row input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+        }
+
+        .form-row select:focus,
+        .form-row input:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            color: #333;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #e9ecef;
+        }
+
+        .btn-submit {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        .btn-submit:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-top: 3px solid #4CAF50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer-logo img {
+            width: 25px;
+            height: 15px;
+        }
+
+        .colon {
+            margin-right: 5px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 0 10px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 5px;
+            }
+            
+            .form-row label {
+                min-width: auto;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-inner">
+                    <div class="logo-star"><img src="arko.png" alt="" srcset=""></div>
+                </div>
+            </div>
+            <div class="header-text">
+                <h1>Ministry of Education</h1>
+                <h2>Intermediate and Secondary Education Boards Bangladesh</h2>
+                <div class="subtitle">Official Website of Education Board</div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <form id="resultsForm">
+                <div class="form-row">
+                    <label for="examination">Examination<span class="colon">:</span></label>
+                    <select id="examination" name="examination">
+                        <option value="">SSC/Dakhil/Equivalent</option>
+                        <option value="ssc">SSC</option>
+                        <option value="dakhil">Dakhil</option>
+                        <option value="hsc">HSC</option>
+                        <option value="alim">Alim</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="year">Year<span class="colon">:</span></label>
+                    <select id="year" name="year">
+                        <option value="">Select One</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="board">Board<span class="colon">:</span></label>
+                    <select id="board" name="board">
+                        <option value="">Select One</option>
+                        <option value="dhaka">Dhaka</option>
+                        <option value="chittagong">Chittagong</option>
+                        <option value="rajshahi">Rajshahi</option>
+                        <option value="sylhet">Sylhet</option>
+                        <option value="barisal">Barisal</option>
+                        <option value="comilla">Comilla</option>
+                        <option value="jessore">Jessore</option>
+                        <option value="dinajpur">Dinajpur</option>
+                        <option value="mymensingh">Mymensingh</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label for="roll">Roll<span class="colon">:</span></label>
+                    <input type="text" id="roll" name="roll" placeholder="">
+                </div>
+
+                <div class="form-row">
+                    <label for="regNo">Reg. No<span class="colon">:</span></label>
+                    <input type="text" id="regNo" name="regNo" placeholder="">
+                </div>
+
+                <div class="form-row">
+                    <label for="captcha">7 + 8<span class="colon">:</span></label>
+                    <input type="text" id="captcha" name="captcha" placeholder="">
+                </div>
+
+                <div class="button-row">
+                    <button type="reset" class="btn">Reset</button>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="footer">
+            <div>©2005-2025 Ministry of Education, All rights reserved.</div>
+            <div class="footer-logo">
+                <span>Powered by</span>
+                <div style="background-color: #4CAF50; color: white; padding: 2px 6px; border-radius: 3px; font-weight: bold; font-size: 10px;">
+                    teletalk
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('resultsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const examination = document.getElementById('examination').value;
+            const year = document.getElementById('year').value;
+            const board = document.getElementById('board').value;
+            const roll = document.getElementById('roll').value;
+            const regNo = document.getElementById('regNo').value;
+            const captcha = document.getElementById('captcha').value;
+
+            if (!examination || !year || !board || !roll || !regNo) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            if (captcha !== '15') {
+                alert('Please solve the math problem correctly.');
+                return;
+            }
+
+            // Redirect to hsc.html
+            window.location.href = 'hsc.html';
+        });
+    </script>
+</body>
+</html>
